@@ -1,5 +1,5 @@
 <template>
-    <h1>Oie</h1>
+    <h1>Oi!</h1>
 </template>
 
 
