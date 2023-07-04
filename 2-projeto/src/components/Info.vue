@@ -12,7 +12,7 @@
 
         <p>Utilizo as seguintes tecnologias para front-end:</p>
         <ul>
-            <li v-bind:key="index" v-for="technology in frontend_technologies" :key="technology.id">
+            <li v-for="technology in frontend_technologies" :key="technology.id">
                 {{ technology.language }}
             </li>
         </ul>
@@ -54,9 +54,3 @@
         }
     }
 </script>
-
-<style>
-.paragrafo-pai{
-    color: red;
-}
-</style>
