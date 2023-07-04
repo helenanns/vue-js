@@ -11,7 +11,13 @@
       }
     },
     created() {
-      this.nome = "Helena"
+      this.nome = "Helena" 
+      this.lifeCycle();
+    },
+    methods: {
+      lifeCycle(){
+        console.log("Executou");
+      }
     }
   }
 </script>

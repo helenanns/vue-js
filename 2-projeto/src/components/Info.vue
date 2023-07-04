@@ -8,6 +8,9 @@
             <li>PHP</li>
             <li>Python</li>
         </ul>
+        <div>
+            <button @click="showEmail">Mostrar e-mail</button>
+        </div>
         <p v-show="mostrar_email">Mande uma mensagem para: {{ email }}</p>
         <p>Para acessar meu portfólio <a v-bind:href="meu_link" target="_blank">clique aqui</a></p>
         <Picture />
@@ -25,11 +28,19 @@
             return{
                 email: 'helena.nunes@futurasistemas.com.br',
                 esta_trabalhando: false,
-                mostrar_email: true,
+                mostrar_email: false,
                 meu_link: 'https://google.com'
+            }
+        },
+        methods:{
+            showEmail(){
+                this.mostrar_email = !this.mostrar_email;
             }
         }
     }
 </script>
+
+<!-- 
+-->
 
 
