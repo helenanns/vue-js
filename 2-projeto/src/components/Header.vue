@@ -9,7 +9,9 @@
         <li>
             <a href="#">Contato</a>
         </li>
-        <li v-if="esta_logado">Meu perfil</li>
+        <li v-if="esta_logado">
+            <a href="#">Meu perfil</a>
+        </li>
     </ul>
 </template>
 
@@ -18,7 +20,6 @@
         name: 'Header',
         props: ["esta_logado"]
     }
-
 </script>
 
 
