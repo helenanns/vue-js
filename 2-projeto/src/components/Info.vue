@@ -1,5 +1,6 @@
 <template>
     <div>
+        <p>{{ email }}</p>
         <p v-if="esta_trabalhando">Estou trabalhando no momento.</p>
         <p v-else="esta_trabalhando">Estou em busca de novas oportunidades!</p>
 
@@ -33,10 +34,12 @@
         components: {
             Picture
         },
+        props: {
+            email: String,
+            esta_trabalhando: Boolean,
+        },
         data(){
             return{
-                email: 'helena.nunes@futurasistemas.com.br',
-                esta_trabalhando: false,
                 mostrar_email: false,
                 url_portfolio: 'https://google.com',
                 backend_technologies: ['Javascript', 'PHP', 'Python'],

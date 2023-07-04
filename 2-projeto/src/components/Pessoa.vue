@@ -1,6 +1,6 @@
 <template>
     <h2>Descrição da pessoa: {{ nome }}</h2>
-    <Info /> 
+    <Info :email="email" :esta_trabalhando=false /> 
     <Form />
 </template>
 
@@ -15,8 +15,10 @@ export default{
     },
     data(){
         return{
-            nome: 'Helena'
+            nome: 'Helena',
+            email: 'helena.nunes@futurasistemas.com.br'
         }
     }
 }
 </script>
+
