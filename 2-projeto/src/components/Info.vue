@@ -1,7 +1,7 @@
 <template>
     <div>
         <p v-if="esta_trabalhando">Estou trabalhando no momento.</p>
-        <p v-else="esta_trabalhando">Estou em busca de novas oportunidades.</p>
+        <p v-else="esta_trabalhando">Estou em busca de novas oportunidades!</p>
         <p>Utilizo as seguintes tecnologias:</p>
         <ul>
             <li>Javascript</li>
@@ -12,7 +12,7 @@
             <button @click="showEmail">Mostrar e-mail</button>
         </div>
         <p v-show="mostrar_email">Mande uma mensagem para: {{ email }}</p>
-        <p>Para acessar meu portfólio <a v-bind:href="meu_link" target="_blank">clique aqui</a></p>
+        <p class="teste">Para acessar meu portfólio <a v-bind:href="url_portfolio" target="_blank">clique aqui</a></p>
         <Picture />
     </div>
 </template>
@@ -29,7 +29,7 @@
                 email: 'helena.nunes@futurasistemas.com.br',
                 esta_trabalhando: false,
                 mostrar_email: false,
-                meu_link: 'https://google.com'
+                url_portfolio: 'https://google.com'
             }
         },
         methods:{
@@ -40,7 +40,8 @@
     }
 </script>
 
-<!-- 
--->
-
-
+<style>
+.paragrafo-pai{
+    color: red;
+}
+</style>
