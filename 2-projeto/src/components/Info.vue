@@ -2,12 +2,21 @@
     <div>
         <p v-if="esta_trabalhando">Estou trabalhando no momento.</p>
         <p v-else="esta_trabalhando">Estou em busca de novas oportunidades!</p>
-        <p>Utilizo as seguintes tecnologias:</p>
+
+        <p>Utilizo as seguintes tecnologias para back-end:</p>
         <ul>
-            <li>Javascript</li>
-            <li>PHP</li>
-            <li>Python</li>
+            <li v-for="(technology, index) in backend_technologies" v-bind:key="index">
+                {{technology}}
+            </li>
         </ul>
+
+        <p>Utilizo as seguintes tecnologias para front-end:</p>
+        <ul>
+            <li v-bind:key="index" v-for="technology in frontend_technologies" :key="technology.id">
+                {{ technology.language }}
+            </li>
+        </ul>
+
         <div>
             <button @click="showEmail">Mostrar e-mail</button>
         </div>
@@ -29,7 +38,13 @@
                 email: 'helena.nunes@futurasistemas.com.br',
                 esta_trabalhando: false,
                 mostrar_email: false,
-                url_portfolio: 'https://google.com'
+                url_portfolio: 'https://google.com',
+                backend_technologies: ['Javascript', 'PHP', 'Python'],
+                frontend_technologies: [
+                    {id: 1, language: 'HTML'},
+                    {id: 3, language: 'CSS'},
+                    {id: 4, language: 'Vue'},
+                ]
             }
         },
         methods:{
