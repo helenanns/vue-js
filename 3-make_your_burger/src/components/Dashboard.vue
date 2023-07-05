@@ -22,10 +22,12 @@
             </ul>
             </div>
             <div>
-            <select name="status" class="status">
-                <option value=""></option>
-            </select>
-            <button class="delete-btn" >Cancelar</button>
+                <select name="status" class="status" @change="updateBurger($event, burger.id)">
+                    <option v-for="s in status" :key="s.id" :value="s.tipo" :selected="burger.status == s.tipo">
+                    {{ s.tipo }}
+                    </option>
+                </select>
+                <button class="delete-btn" >Cancelar</button>
             </div>
         </div>
         </div>
@@ -64,7 +66,7 @@
                 const data = await req.json();
 
                 this.status = data;
-            },
+            }
         },
         mounted(){
             this.getPedidos();
