@@ -1,14 +1,8 @@
 <template>
   <main class="main-container">
-
-
     <h1>Gerenciar pedidos:</h1>  
 
     <Dashboard />
-
-
-
-
   </main>
 </template>
 
