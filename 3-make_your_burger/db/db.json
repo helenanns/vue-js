@@ -86,19 +86,8 @@
         "Bacon",
         "Cheddar"
       ],
-      "status": "Em produção",
+      "status": "Finalizado",
       "id": 2
-    },
-    {
-      "nome": "Laisla",
-      "carne": "Alcatra",
-      "pao": "3 Queijos",
-      "opcionais": [
-        "Bacon",
-        "Tomate"
-      ],
-      "status": "Solicitado",
-      "id": 3
     },
     {
       "nome": "Helena",
@@ -120,7 +109,7 @@
         "Tomate",
         "Pepino"
       ],
-      "status": "Solicitado",
+      "status": "Finalizado",
       "id": 5
     }
   ]

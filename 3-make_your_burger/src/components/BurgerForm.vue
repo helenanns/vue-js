@@ -68,6 +68,7 @@ export default {
 
     },
     async createBurger(e){
+
       e.preventDefault();
       
       const data = {
@@ -87,6 +88,8 @@ export default {
       });
 
       const res = await req.json();
+
+      console.log(res)
 
       this.msg = "Pedido realizado com sucesso!";
 
