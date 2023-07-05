@@ -1,13 +1,7 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-</script>
-
 <template>
-  
-  <Navbar />
+  <Navbar :logo="logo_src" :alt="app_name" />
   <RouterView />
   <Footer />
-
 </template>
 
 
@@ -20,6 +14,12 @@ export default{
   components: {
     Navbar,
     Footer
+  },
+  data(){
+    return{
+      logo_src: '/img/logo.png',
+      app_name: 'Hamburger'
+    }
   }
 }
 

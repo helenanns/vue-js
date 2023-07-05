@@ -1,7 +1,7 @@
 <template>
-    <header>
-        <router-link to="/">
-            <img alt="Vue logo" class="logo" src="../../public/img/logo.png" width="125" height="125" />
+    <header id="nav">
+        <router-link id="logo-url" to="/">
+            <img :alt="alt" :src="logo" id="logo" />
         </router-link>
 
         <div class="wrapper">
@@ -15,6 +15,40 @@
 </template>
 <script>
 export default{
-    name: 'Navbar'
+    name: 'Navbar',
+    props: ['logo', 'alt']
 }
 </script>
+
+
+<style scoped>
+  #nav {
+    background-color: #222;
+    border-bottom: 4px solid #111;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  #nav #logo-url {
+    margin: auto;
+    margin-left: 0;
+  }
+
+  #logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  #nav a {
+    color: #fcba03;
+    text-decoration: none;
+    margin: 12px;
+    transition: .5s;
+  }
+
+  #nav a:hover {
+    color: #FFF;
+  }
+</style>

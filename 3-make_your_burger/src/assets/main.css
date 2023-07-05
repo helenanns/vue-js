@@ -1,8 +1,29 @@
-/* #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+* {
+  font-family: Helvetica;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
+.main-container {
+  margin: 50px;
+  min-height: 250px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 42px;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+body{
+  margin: 0;
+}
+
+#app {
+  margin: 0 auto;
+  padding: 0;
   font-weight: normal;
 }
 
@@ -30,4 +51,4 @@ a,
     grid-template-columns: 1fr 1fr;
     padding: 0 2rem;
   }
-} */
+}
