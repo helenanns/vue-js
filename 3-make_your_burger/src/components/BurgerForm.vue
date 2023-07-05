@@ -1,47 +1,46 @@
 <template>
+  <Message :msg="msg" v-show="msg" />
   <form id="burger-form" @submit="createBurger">
-
     <div class="input-container">
-      
-      <div class="input-container">
-        <label for="nome">Nome do cliente:</label>
-        <input type="text" id="nome" name="nome" v-model="nome" placeholder="Digite o seu nome">
-      </div>
-
-      <div class="input-container">
-        <label for="pao">Escolha o pão:</label>
-        <select name="pao" id="pao" v-model="pao">
-          <option value="">Selecione o seu pão</option>
-          <option v-for="pao in paes" :key="pao.id" :value="pao.tipo">{{pao.tipo}}</option>
-        </select>
-      </div>
-
-      <div class="input-container">
-        <label for="carne">Escolha a carne do seu Burger:</label>
-        <select name="carne" id="carne" v-model="carne">
-          <option value="">Selecione a carne do seu Burger</option>
-          <option v-for="carne in carnes" :key="carne.id" :value="carne.tipo">{{carne.tipo}}</option>
-        </select>
-      </div>
-
-      <div class="input-container" id="opcionais-container">
-        <label id="opcionais-title" for="opcionais">Selecione os opcionais:</label>
-        <div class="checkbox-container" v-for="opcional in opcionaisdata" :key="opcional.id">
-          <input type="checkbox" name="opcionais" v-model="opcionais" :value="opcional.tipo">
-          <span>{{opcional.tipo}}</span>
-        </div>
-      </div>
-
-      <div class="input-container">
-        <input type="submit" class="submit-btn" value="Criar meu Burger">
-      </div>
-
+      <label for="nome">Nome do cliente:</label>
+      <input type="text" id="nome" name="nome" v-model="nome" placeholder="Digite o seu nome">
     </div>
 
+    <div class="input-container">
+      <label for="pao">Escolha o pão:</label>
+      <select name="pao" id="pao" v-model="pao">
+        <option value="">Selecione o seu pão</option>
+        <option v-for="pao in paes" :key="pao.id" :value="pao.tipo">{{pao.tipo}}</option>
+      </select>
+    </div>
+
+    <div class="input-container">
+      <label for="carne">Escolha a carne do seu Burger:</label>
+      <select name="carne" id="carne" v-model="carne">
+        <option value="">Selecione a carne do seu Burger</option>
+        <option v-for="carne in carnes" :key="carne.id" :value="carne.tipo">{{carne.tipo}}</option>
+      </select>
+    </div>
+
+    <div class="input-container" id="opcionais-container">
+      <label id="opcionais-title" for="opcionais">Selecione os opcionais:</label>
+      <div class="checkbox-container" v-for="opcional in opcionaisdata" :key="opcional.id">
+        <input type="checkbox" name="opcionais" v-model="opcionais" :value="opcional.tipo">
+        <span>{{opcional.tipo}}</span>
+      </div>
+    </div>
+
+    <div class="input-container">
+      <input type="submit" class="submit-btn" value="Criar meu Burger">
+    </div>
   </form>
+
 </template>
 
 <script>
+
+import Message from './Message.vue';
+
 export default {
   name: 'BurgerForm',
   data(){
@@ -88,17 +87,25 @@ export default {
       });
 
       const res = await req.json();
+
+      this.msg = "Pedido realizado com sucesso!";
+
+      // limpar msg
+      setTimeout(() => this.msg = "", 3000)
       
-      //limpar os campos
-      this.nome = '';
-      this.paes = '';
-      this.carnes = '';
-      this.opcionais = '';
+      // limpar campos
+      this.nome = ""
+      this.carne = ""
+      this.pao = ""
+      this.opcionais = []
 
     }
   },
   mounted(){
     this.getIngredientes();
+  },
+  components: {
+    Message
   }
 }
 </script>
